@@ -1,0 +1,4 @@
+# TP2 (2x RTX 3090, AWQ-INT4 + DSpark)
+max_total_num_tokens=118693, max_running_requests=48
+context_len=65536 (effective; KV pool 118k handles up to ~64k prompts)
+GPU0: 21874/24576 MiB, GPU1: 21544/24576 MiB

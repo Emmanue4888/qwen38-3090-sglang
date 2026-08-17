@@ -1,0 +1,18 @@
+[
+ {
+  "tag": "image-base64",
+  "ok": true,
+  "wall": 0.62,
+  "ctoks": 58,
+  "ptoks": 128,
+  "out": "The user wants the color of the image. The image is a solid square of pure red ("
+ },
+ {
+  "tag": "video-base64",
+  "ok": true,
+  "wall": 1.02,
+  "ctoks": 80,
+  "ptoks": 297,
+  "out": "The user wants a one-sentence description of the video. The frames show a color "
+ }
+]

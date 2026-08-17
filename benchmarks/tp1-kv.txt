@@ -1,0 +1,4 @@
+# TP1 (1x RTX 3090, AWQ-INT4, no DSpark)
+max_total_num_tokens=14775, max_running_requests=8
+context_len=8192 (effective; KV pool too small for >14k tokens)
+GPU0: 23312/24576 MiB used (19GB weights + 1.3GB KV + 3GB mamba/graph)

@@ -9,6 +9,12 @@ MODELS=${MODELS_DIR:-/models}
 AWQ=$MODELS/Qwen3.8-27B-AWQ-INT4
 DRAFT=$MODELS/Qwen3.8-27B-DSpark
 
+# DSpark on TP1 leaves almost no KV cache (21.7 GB weights on 24 GB card) — auto-disable
+if [ "$TP" = "1" ] && [ "$DSPARK" = "1" ]; then
+  echo "[entrypoint] DSpark auto-disabled on TP=1 (insufficient VRAM for draft model; would leave <1 GB KV cache)"
+  DSPARK=0
+fi
+
 echo "[entrypoint] TP=$TP DSPARK=$DSPARK PORT=$PORT models=$MODELS"
 
 # --- download weights if missing (~23 GB target + 2.6 GB draft) ---
@@ -24,10 +30,10 @@ fi
 # --- validated presets per GPU count ---
 # GDN hybrid memory tuning: TP1 needs a small mamba state pool to fit one 24 GB card
 case "$TP:$DSPARK" in
-  1:1) TPFLAGS="--mem-fraction-static 0.92 --max-mamba-cache-size 16" ;;
-  1:0) TPFLAGS="--mem-fraction-static 0.92 --max-mamba-cache-size 48" ;;
-  2:1) TPFLAGS="--mem-fraction-static 0.88 --max-mamba-cache-size 64" ;;
-  2:0) TPFLAGS="--mem-fraction-static 0.90 --max-mamba-cache-size 96" ;;
+  1:1) TPFLAGS="--mem-fraction-static 0.92 --max-mamba-cache-size 4 --disable-prefill-cuda-graph --cuda-graph-max-bs 4" ;;
+  1:0) TPFLAGS="--mem-fraction-static 0.92 --max-mamba-cache-size 8 --disable-prefill-cuda-graph --cuda-graph-max-bs 8" ;;
+  2:1) TPFLAGS="--mem-fraction-static 0.85 --max-mamba-cache-size 16 --disable-prefill-cuda-graph --cuda-graph-max-bs 16" ;;
+  2:0) TPFLAGS="--mem-fraction-static 0.85 --max-mamba-cache-size 32 --disable-prefill-cuda-graph --cuda-graph-max-bs 16" ;;
   4:1) TPFLAGS="--mem-fraction-static 0.72" ;;
   4:0) TPFLAGS="--mem-fraction-static 0.80" ;;
   *) echo "TP must be 1, 2 or 4"; exit 1 ;;

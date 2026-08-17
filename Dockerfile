@@ -40,7 +40,8 @@ RUN F=/opt/venv/lib/python3.12/site-packages/flashinfer/data/cccl/libcudacxx/inc
 
 ENV CUDA_HOME=/opt/cuda \
     NVCC_APPEND_FLAGS=-allow-unsupported-compiler \
-    PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
+    PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True \
+    LD_LIBRARY_PATH=/opt/cuda/lib64:/usr/lib/x86_64-linux-gnu
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
